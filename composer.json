@@ -1,0 +1,27 @@
+{
+  "name": "mk/cleanup-bundle",
+  "type": "pimcore-bundle",
+  "license": "GPL-3.0-or-later",
+  "description": "Manuel Kleinert - Cleanup Bundle",
+  "autoload": {
+    "psr-4": {
+      "CleanupBundle\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "": "src/"
+    }
+  },
+  "extra": {
+    "pimcore": {
+      "bundles": [
+        "MK\\CleanupBundle"
+      ]
+    }
+  },
+  "require": {
+    "php": "^8.2",
+    "pimcore/pimcore": "^11.0"
+  }
+}

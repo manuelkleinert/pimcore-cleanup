@@ -1,2 +1,2 @@
-# pimcore-cleanup
+# Pimcore-Cleanup Bundle
 Pimcore cleanup bundle
