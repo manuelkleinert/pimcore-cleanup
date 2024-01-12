@@ -2,7 +2,15 @@
   "name": "mpk/cleanup-bundle",
   "type": "pimcore-bundle",
   "license": "GPL-3.0-or-later",
-  "description": "Manuel Kleinert - Cleanup Bundle",
+  "description": "Cleanup Bundle",
+  "authors": [
+    {
+        "name": "Manuel Kleinert",
+        "email": "info@manuelkleinert.ch",
+        "homepage": "https://www.manuelkleinert.ch",
+        "role": "Developer"
+    }
+  ],
   "autoload": {
     "psr-4": {
       "CleanupBundle\\": "src/"
