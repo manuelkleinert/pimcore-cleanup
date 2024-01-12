@@ -12,7 +12,7 @@ class CleanupBundle extends AbstractPimcoreBundle implements PimcoreBundleAdminC
 
     public function getComposerPackageName(): string
     {
-        return 'mk/cleanup-bundle';
+        return 'mpk/cleanup-bundle';
     }
 
     public function getCssPaths(): array

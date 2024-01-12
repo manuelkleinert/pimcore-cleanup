@@ -1,5 +1,5 @@
 {
-  "name": "mk/cleanup-bundle",
+  "name": "mpk/cleanup-bundle",
   "type": "pimcore-bundle",
   "license": "GPL-3.0-or-later",
   "description": "Manuel Kleinert - Cleanup Bundle",
@@ -16,7 +16,7 @@
   "extra": {
     "pimcore": {
       "bundles": [
-        "MK\\CleanupBundle"
+        "mpk\\CleanupBundle"
       ]
     }
   },
