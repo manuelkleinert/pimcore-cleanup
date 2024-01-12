@@ -26,6 +26,7 @@ class CleanupBundle extends AbstractPimcoreBundle implements PimcoreBundleAdminC
     {
         return [
             '/bundles/cleanup/js/startup.js',
+            '/bundles/cleanup/js/settings.js',
         ];
     }
 
