@@ -35,9 +35,9 @@ cleanup.startup = Class.create({
 
   showCleanUpSettings: function () {
     try {
-        pimcore.globalmanager.get("bundle_clean_up_settings").activate();
+        pimcore.globalmanager.get("cleanup_settingss").activate();
     } catch (e) {
-        pimcore.globalmanager.add("bundle_clean_up_settings", new cleanup.settings());
+        pimcore.globalmanager.add("cleanup_settings", new cleanup.settings());
     }
   },
 })
