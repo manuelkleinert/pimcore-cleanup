@@ -9,7 +9,7 @@ cleanup.settings = Class.create({
         title: t("cleanup_settings_bundle_title"),
         iconCls: "icon_cleanup_settings",
         border: false,
-        layout: "border",
+        layout: "fit",
         closable: true,
         items: [this.getSettingsPanel()]
     });
@@ -24,29 +24,54 @@ cleanup.settings = Class.create({
   },
 
   getSettingsPanel: function () {
-    if (!this.settingsPanel) {
-      this.settingsPanel = new Ext.TabPanel({
-          title: t("cleanup_settings_title"),
-          region: "center",
-          enableTabScroll: true,
-          items: []
-      });
-
-      this.settingsPanel.add({
-          xtype: "checkbox",
-          boxLabel: t("enable_text_selection"),
-          name: "enableTextSelection",
-          value: 0
-      });
-
-      this.settingsPanel.add({
-          xtype: "checkbox",
-          boxLabel: t("allow_to_create_new_object"),
-          name: "allowToCreateNewObject",
-          value: 0
+    if (!this.layout) {
+      this.layout = Ext.create('Ext.form.Panel', {
+        bodyStyle: 'padding:20px 5px 20px 5px;',
+        border: false,
+        autoScroll: true,
+        forceLayout: true,
+        defaults: {
+            forceLayout: true
+        },
+        fieldDefaults: {
+            labelWidth: 250
+        },
+        buttons: [
+            {
+                text: t("save"),
+                // handler: this.save.bind(this),
+                iconCls: "pimcore_icon_apply",
+                // disabled: !this.getValue("writeable")
+            }
+        ],
+        items: [
+          {
+            xtype: 'fieldset',
+            title: t('cleanup_settings_title'),
+            collapsible: true,
+            collapsed: false,
+            autoHeight: true,
+            labelWidth: 250,
+            defaultType: 'textfield',
+            items: [
+                {
+                    boxLabel: t("cleanup_settings_remove_directly"),
+                    xtype: "checkbox",
+                    name: "cleanup.remove_directly",
+                    // checked: this.getValue("cleanup.remove_directly")
+                },
+                {
+                    boxLabel: t("cleanup_settings_mark unused_assets"),
+                    xtype: "checkbox",
+                    name: "cleanup.mark unused_assets",
+                    // checked: this.getValue("cleanup.mark unused_assets")
+                }
+            ]
+          }
+        ]
       });
     }
-
-    return this.settingsPanel;
+    return this.layout;
+    
   }
-})
+});
