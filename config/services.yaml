@@ -4,12 +4,19 @@ services:
         autoconfigure: true
         public: false
 
+    #
+    # CONTROLLERS
+    #
+
     # auto-register all controllers as services
     CleanupBundle\Controller\:
         resource: '../src/Controller'
         public: true
         tags: [ 'controller.service_arguments' ]
 
+    #
+    # COMMANDS
+    #
 
     # auto-register all commands as services
     CleanupBundle\Command\:
