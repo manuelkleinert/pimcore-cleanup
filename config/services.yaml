@@ -12,7 +12,8 @@ services:
     CleanupBundle\Controller\:
         resource: '../src/Controller'
         public: true
-        tags: [ 'controller.service_arguments' ]
+        tags:
+            - 'controller.service_arguments'
 
     #
     # COMMANDS
@@ -20,5 +21,5 @@ services:
 
     # auto-register all commands as services
     CleanupBundle\Command\:
-        resource: '../src/Command'
-        tags: [ 'console.command' ]
+        tags:
+            - { name: console.command }
