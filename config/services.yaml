@@ -1,24 +1,2 @@
-services:
-    _defaults:
-        autowire: true
-        autoconfigure: true
-        public: false
-
-    #
-    # CONTROLLERS
-    #
-
-    # auto-register all controllers as services
-    CleanupBundle\Controller\:
-        resource: '../src/Controller'
-        public: true
-        tags:
-            - 'controller.service_arguments'
-
-    #
-    # COMMANDS
-    #
-
-    # auto-register all commands as services
-    CleanupBundle\Command\AssetCleanCleanupCommand:
-        tags: [ 'console.command' ]
+imports:
+    - { resource: services/*.yaml }

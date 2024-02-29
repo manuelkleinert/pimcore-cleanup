@@ -1,0 +1,7 @@
+services:
+
+  CleanupBundle\Controller\:
+    resource: '../src/Controller'
+    public: true
+    tags:
+      - 'controller.service_arguments'

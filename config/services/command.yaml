@@ -1,0 +1,11 @@
+services:
+
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false0
+
+  CleanupBundle\Command\AssetCleanCleanupCommand:
+    tags:
+      - { name: console.command }
+

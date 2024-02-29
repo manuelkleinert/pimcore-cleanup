@@ -3,6 +3,7 @@
   "type": "pimcore-bundle",
   "license": "GPL-3.0-or-later",
   "description": "Cleanup Bundle",
+  "keywords": ["pimcore", "celanup"],
   "authors": [
     {
         "name": "Manuel Kleinert",
