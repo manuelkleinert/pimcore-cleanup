@@ -20,6 +20,6 @@ services:
     #
 
     # auto-register all commands as services
-    CleanupBundle\Command\:
-        tags:
-            - { name: console.command }
+    CleanupBundle\Command\AssetCleanupCommand:
+        resource: '../src/Command'
+        tags: [ 'console.command' ]
