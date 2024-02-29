@@ -3,38 +3,23 @@ declare(strict_types=1);
 
 namespace CleanupBundle\Command;
 
-use Pimcore\Console\AbstractCommand;
-use Pimcore\Event\SystemEvents;
-use Symfony\Component\Console\Attribute\AsCommand;
+use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Style\SymfonyStyle;
-use Symfony\Component\EventDispatcher\GenericEvent;
-use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
-#[AsCommand(
-    name: 'cleanup:asset',
-    description: 'Cleanup assets'
-)]
-class AssetCleanCleanupCommand extends AbstractCommand
+class AssetCleanCleanupCommand extends Command
 {
-    public function __construct(private EventDispatcherInterface $eventDispatcher)
+    protected static $defaultName = 'cleanup:asset';
+    protected static $defaultDescription = 'Cleanup assets';
+
+    public function __construct()
     {
         parent::__construct();
     }
 
     protected function configure(): void
     {
-        $this
-            ->setHidden(false)
-            ->addOption(
-                'tags',
-                't',
-                InputOption::VALUE_REQUIRED | InputOption::VALUE_IS_ARRAY,
-                'Only specific tags (csv list of tags)'
-            )
-        ;
+        $this->setHidden(false);
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int
