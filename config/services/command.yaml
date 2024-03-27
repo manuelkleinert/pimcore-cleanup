@@ -3,7 +3,7 @@ services:
   _defaults:
     autowire: true
     autoconfigure: true
-    public: false0
+    public: false
 
   CleanupBundle\Command\AssetCleanCleanupCommand:
     tags:
