@@ -5,15 +5,21 @@ namespace CleanupBundle\Command;
 
 use Pimcore\Console\AbstractCommand;
 use Symfony\Component\Console\Attribute\AsCommand;
+use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-#[AsCommand(
-    name: 'cleanup:asset',
-    description: 'Awesome command'
-)]
 class AssetCleanCleanupCommand extends AbstractCommand
 {
+    protected function configure()
+    {
+        $this
+            ->setHidden(false)
+            ->setName('cleanup:asset')
+            ->setDescription('Asset cleanup command')
+            ->addArgument('mode', InputArgument::OPTIONAL, 'mode, forcereload or normal or singleid-<ID>', 'normal');
+    }
+
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         // dump
@@ -24,7 +30,7 @@ class AssetCleanCleanupCommand extends AbstractCommand
 
         // only dump in verbose mode
         $this->dumpVerbose("Dump verbose");
-        
+
         // Output as white text on red background.
         $this->writeError('oh noes!');
 

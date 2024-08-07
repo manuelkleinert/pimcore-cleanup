@@ -6,6 +6,7 @@ services:
     public: false
 
   CleanupBundle\Command\AssetCleanCleanupCommand:
+    public: true
     tags:
-      - { name: console.command }
+      - { name: 'console.command' }
 
